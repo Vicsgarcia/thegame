@@ -3,7 +3,7 @@ var tablero = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
 var jugador = 1;
 function seleccionar(){
  for(i=0; i<9; i++){
- if(tablero[i] == 0) document.getElementById("c"+i).style="background-color: white";
+ if(tablero[i] == 0) document.getElementById("c"+i).style="background-color: coral";
  if(tablero[i] == 1) document.getElementById("c"+i).style="background-color: red";
  if(tablero[i] == 2) document.getElementById("c"+i).style="background-color: blue"; 
  }
