@@ -1,0 +1,25 @@
+
+
+.body{
+    background-color: aquamarine;
+}
+.title{
+    display: block;
+    text-align: center;
+}
+@keyframes jigsaw {
+    0% {
+      width: 0%
+    }
+    100% {
+        width: 15%
+    }
+  }
+ .jigsaw{
+    display:block;
+    margin:auto;
+    width: 15%;
+    animation-name: jigsaw;
+    animation-duration: 6s;
+}
+
