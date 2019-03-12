@@ -2,18 +2,28 @@
 window.onload=function(){document.onkeydown=desplazar};
     function desplazar(objeto){
     var tecla = objeto.which;
-    
-        var situacionY = document.getElementById("cuadrado").offsetLeft;
-         var situacionX = document.getElementById("cuadrado").offsetTop;
+    var situacionY = document.getElementById("rick").offsetLeft;
+    var situacionX = document.getElementById("rick").offsetTop;
+    var situacionV = document.getElementById("morty").offsetLeft;
+    var situacionZ = document.getElementById("morty").offsetTop;
         switch (tecla){
             case 37 :   
-                cuadrado.style.left = situacionY-220+"px" ; break;
+                rick.style.left = situacionY-220+"px" ; break;
             case 38 : 
-                cuadrado.style.top = situacionX-220+"px" ;break;
+                rick.style.top = situacionX-220+"px" ;break;
             case 39 :  
-        cuadrado.style.left = situacionY-180+"px" ;break;
+                rick.style.left = situacionY-180+"px" ;break;
             case 40 : 
-                cuadrado.style.top = situacionX-180+"px" ;break;
-        default :alert("Se ha equivocado, debe pulsar las flechas del teclado");
+                rick.style.top = situacionX-180+"px" ;break;
+            case 65 :   
+                morty.style.left = situacionV-220+"px" ; break;
+            case 87 : 
+                morty.style.top = situacionZ-220+"px" ;break;
+            case 83 :  
+                morty.style.left = situacionV-180+"px" ;break;
+            case 90 : 
+                morty.style.top = situacionZ-180+"px" ;break;
         }
     }
+
+

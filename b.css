@@ -1,10 +1,18 @@
 
 body {
-    background: #000 url(images/rickhome.jpeg);
+    background: #fff;
     background-size: 100%;
+    position:fixed;
   }
 
-  #cuadrado{
+  #rick{
     margin:200px;
+    width: 100px;
+    position: absolute;
+}
+
+#morty{
+    margin:200px;
+    width: 100px;
     position: absolute;
 }
