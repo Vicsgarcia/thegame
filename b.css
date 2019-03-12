@@ -1,0 +1,10 @@
+
+body {
+    background: #000 url(images/rickhome.jpeg);
+    background-size: 100%;
+  }
+
+  #cuadrado{
+    margin:200px;
+    position: absolute;
+}
