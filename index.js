@@ -7,7 +7,6 @@ var audio = document.createElement('audio');
 audio.src = 'sounds/quiero-jugar-a-un-juego-muneco-saw.ogg'
 audio.play();
 */
-
 document.getElementById("onePlayer").onclick = function () {
         location.href = "oneplayer.html";
 }

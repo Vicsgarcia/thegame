@@ -144,7 +144,7 @@ var game = (function () {
     function Player(life, score) {
         var settings = {
             marginBottom : 10,
-            defaultHeight : 66
+            defaultHeight : 65
         };
         player = new Image();
         player.src = 'images/bueno.png';
