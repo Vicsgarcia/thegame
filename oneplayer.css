@@ -31,10 +31,7 @@ div.juego canvas {
 div.derecha {
     float: right;
 }
-div.derecha h3.tituloPuntuaciones {
-    background: url("../images/medalla.png") no-repeat left;
-    padding: 10px;
-}
+
 div.derecha ul#puntuaciones {
     width: 300px;
     margin: 0;

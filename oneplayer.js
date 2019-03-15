@@ -1,9 +1,10 @@
-// nos marca los pulsos del juego
+
+// timing for the game, it is set in 60times/sec
 window.requestAnimFrame = (function () {
     return  window.requestAnimationFrame        ||
         window.webkitRequestAnimationFrame  ||
         window.mozRequestAnimationFrame     ||
-        window.oRequestAnimationFrame       
+        window.oRequestAnimationFrame       ||
         window.msRequestAnimationFrame      ||
         function ( callback, element) {
             window.setTimeout(callback, 1000 / 60);
@@ -17,7 +18,7 @@ arrayRemove = function (array, from) {
 
 var game = (function () {
 
-    // Variables globales a la aplicacion
+    // global vars
     var canvas,
         ctx,
         buffer,
@@ -27,7 +28,8 @@ var game = (function () {
         playerShot,
         bgMain,
         bgBoss,
-        evilSpeed = 1,
+        //Here you can modify the difficulty of the game
+        evilSpeed = 0.5,
         totalEvils = 7,
         playerLife = 10,
         shotSpeed = 5,
@@ -56,10 +58,11 @@ var game = (function () {
             killed : new Image()
         },
         keyPressed = {},
+        //set of the moves
         keyMap = {
             left: 37,
             right: 39,
-            fire: 32     //  espacio
+            fire: 32     //  space keycode
         },
         nextPlayerShot = 0,
         playerShotDelay = 250,
@@ -70,7 +73,7 @@ var game = (function () {
         draw();
     }
 
-/*Blucle for para el movimiento*/
+/*Loop fot the movement of the icons*/
 
     function preloadImages () {
         for (var i = 1; i <= 8; i++) {
@@ -101,10 +104,10 @@ var game = (function () {
         preloadImages();
 
         showBestScores();
-
+//call the canvas
         canvas = document.getElementById('canvas');
         ctx = canvas.getContext("2d");
-
+//set the canvas
         buffer = document.createElement('canvas');
         buffer.width = canvas.width;
         buffer.height = canvas.height;
@@ -115,7 +118,7 @@ var game = (function () {
         createNewEvil();
 
         showLifeAndScore();
-
+//event listeners to keys
         addListener(document, 'keydown', keyDown);
         addListener(document, 'keyup', keyUp);
 
@@ -129,14 +132,15 @@ var game = (function () {
     function showLifeAndScore () {
         bufferctx.fillStyle="rgb(59,59,59)";
         bufferctx.font="bold 16px Arial";
+        //draw inside the canvas the info
         bufferctx.fillText("Puntos: " + player.score, canvas.width - 100, 20);
         bufferctx.fillText("Vidas: " + player.life, canvas.width - 100,40);
     }
-
+//function for generate random range that will be use later in the movements
     function getRandomNumber(range) {
         return Math.floor(Math.random() * range);
     }
-
+//player definitions
     function Player(life, score) {
         var settings = {
             marginBottom : 10,
@@ -161,7 +165,7 @@ var game = (function () {
                 now = new Date().getTime();
             }
         };
-
+//set the actions for player
         player.doAnything = function() {
             if (player.dead)
                 return;
@@ -172,7 +176,7 @@ var game = (function () {
             if (keyPressed.fire)
                 shoot();
         };
-
+//set life of the player
         player.killPlayer = function() {
             if (this.life > 0) {
                 this.dead = true;
@@ -193,7 +197,7 @@ var game = (function () {
         return player;
     }
 
-    /******************************* DISPAROS *******************************/
+    //shots
     function Shot( x, y, array, img) {
         this.posX = x;
         this.posY = y;
@@ -209,7 +213,7 @@ var game = (function () {
     }
 
     function PlayerShot (x, y) {
-        Object.getPrototypeOf(PlayerShot.prototype).constructor.call(this, x, y, playerShotsBuffer, playerShotImage);
+        Object.getPrototypeOf(PlayerShot.prototype).constructor.call(this, x, y, playerShotsBuffer, /* img of shot*/playerShotImage);
         this.isHittingEvil = function() {
             return (!evil.dead && this.posX >= evil.posX && this.posX <= (evil.posX + evil.image.width) &&
                 this.posY >= evil.posY && this.posY <= (evil.posY + evil.image.height));
@@ -229,10 +233,10 @@ var game = (function () {
 
     EvilShot.prototype = Object.create(Shot.prototype);
     EvilShot.prototype.constructor = EvilShot;
-    /******************************* FIN DISPAROS ********************************/
+   
 
 
-    /******************************* ENEMIGOS *******************************/
+    //enemies
     function Enemy(life, shots, enemyImages) {
         this.image = enemyImages.animation[0];
         this.imageNumber = 1;
@@ -243,7 +247,7 @@ var game = (function () {
         this.speed = evilSpeed;
         this.shots = shots ? shots : evilShots;
         this.dead = false;
-
+//use of randaom function to create the movement of the enemies
         var desplazamientoHorizontal = minHorizontalOffset +
             getRandomNumber(maxHorizontalOffset - minHorizontalOffset);
         this.minX = getRandomNumber(canvas.width - desplazamientoHorizontal);
@@ -289,7 +293,7 @@ var game = (function () {
         this.isOutOfScreen = function() {
             return this.posY > (canvas.height + 15);
         };
-
+//use of random number to define shots of enemies
         function shoot() {
             if (evil.shots > 0 && !evil.dead) {
                 var disparo = new EvilShot(evil.posX + (evil.image.width / 2) - 5 , evil.posY + evil.image.height);
@@ -327,7 +331,7 @@ var game = (function () {
 
     FinalBoss.prototype = Object.create(Enemy.prototype);
     FinalBoss.prototype.constructor = FinalBoss;
-    /******************************* FIN ENEMIGOS *******************************/
+
 
     function verifyToCreateNewEvil() {
         if (totalEvils > 0) {
@@ -380,9 +384,9 @@ var game = (function () {
     function addListener(element, type, expression, bubbling) {
         bubbling = bubbling || false;
 
-        if (window.addEventListener) { // Standard
+        if (window.addEventListener) { 
             element.addEventListener(type, expression, bubbling);
-        } else if (window.attachEvent) { // IE
+        } else if (window.attachEvent) { 
             element.attachEvent('on' + type, expression);
         }
     }
@@ -410,22 +414,22 @@ var game = (function () {
     function draw() {
         ctx.drawImage(buffer, 0, 0);
     }
-
+//You lose
     function showGameOver() {
         bufferctx.fillStyle="rgb(255,0,0)";
         bufferctx.font="bold 35px Arial";
-        bufferctx.fillText("GAME OVER", canvas.width / 2 - 100, canvas.height / 2);
+        bufferctx.fillText("GAME OVER PRINGAO", canvas.width / 2 - 100, canvas.height / 2);
     }
-
+//You win
     function showCongratulations () {
         bufferctx.fillStyle="rgb(204,50,153)";
         bufferctx.font="bold 22px Arial";
-        bufferctx.fillText("Enhorabuena, te has pasado el juego!", canvas.width / 2 - 200, canvas.height / 2 - 30);
+        bufferctx.fillText("Enhorabuena, has ganado!", canvas.width / 2 - 200, canvas.height / 2 - 30);
         bufferctx.fillText("PUNTOS: " + player.score, canvas.width / 2 - 200, canvas.height / 2);
         bufferctx.fillText("VIDAS: " + player.life + " x 5", canvas.width / 2 - 200, canvas.height / 2 + 30);
         bufferctx.fillText("PUNTUACION TOTAL: " + getTotalScore(), canvas.width / 2 - 200, canvas.height / 2 + 60);
     }
-
+//FINAL SCORE
     function getTotalScore() {
         return player.score + player.life * 5;
     }
@@ -517,7 +521,7 @@ var game = (function () {
         }
     }
 
-    /******************************* MEJORES PUNTUACIONES (LOCALSTORAGE) *******************************/
+    //BEST SCORES, SAVED IN LOCAL STORAGE
     function saveFinalScore() {
         localStorage.setItem(getFinalScoreDate(), getTotalScore());
         showBestScores();
@@ -593,7 +597,7 @@ var game = (function () {
         list.appendChild(element);
     }
 
-    // extendemos el objeto array con un metodo "containsElement"
+    // EXTEND THE ARRAY WITH"containsElement"-> https://developer.mozilla.org/es/docs/Web/API/Node/contains
     Array.prototype.containsElement = function(element) {
         for (var i = 0; i < this.length; i++) {
             if (this[i] == element) {
@@ -617,7 +621,7 @@ var game = (function () {
             localStorage.removeItem(scoreToRemoveKey);
         }
     }
-    /******************************* FIN MEJORES PUNTUACIONES *******************************/
+
 
     return {
         init: init

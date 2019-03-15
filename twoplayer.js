@@ -2,6 +2,7 @@
 var tablero = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
 var jugador = 1;
 function seleccionar(){
+   //Until 9 because is the max number of boxes you can pick
  for(i=0; i<9; i++){
  if(tablero[i] == 0) document.getElementById("c"+i).style="background-color: coral";
  if(tablero[i] == 1) document.getElementById("c"+i).style="background-color: red";
@@ -21,6 +22,7 @@ if (tablero[celda]==0) {
 window.alert("No puedes pulsar sobre una celda coloreada");
 }
 seleccionar();
+//switch with the situation of winning
  var r = winner();
  switch(r){
   case 0:
@@ -44,17 +46,25 @@ var numEspacios=0;
 for(i=0; i<9; i++){
 if(tablero[i] == 0) numEspacios++;
 }
-//  líneas horizontales
-if(tablero[0] == tablero[1] && tablero[1] == tablero[2] && tablero[0] !=0) return tablero[0];
-if(tablero[3] == tablero[4] && tablero[4] == tablero[5] && tablero[3] !=0) return tablero[3];
-if(tablero[6] == tablero[7] && tablero[7] == tablero[8] && tablero[6] !=0) return tablero[6];
-// líneas verticales
-if(tablero[0] == tablero[3] && tablero[3] == tablero[6] && tablero[0] !=0) return tablero[0];
-if(tablero[1] == tablero[4] && tablero[4] == tablero[7] && tablero[1] !=0) return tablero[1];
-if(tablero[2] == tablero[5] && tablero[5] == tablero[8] && tablero[2] !=0) return tablero[2];
-// diagonales
-if(tablero[0] == tablero[4] && tablero[4] == tablero[8] && tablero[0] !=0) return tablero[0];
-if(tablero[2] == tablero[4] && tablero[4] == tablero[6] && tablero[2] !=0) return tablero[2];
+//  horizontal lines
+if(tablero[0] == tablero[1] && tablero[1] == tablero[2] && tablero[0] !=0) 
+   return tablero[0];
+if(tablero[3] == tablero[4] && tablero[4] == tablero[5] && tablero[3] !=0) 
+   return tablero[3];
+if(tablero[6] == tablero[7] && tablero[7] == tablero[8] && tablero[6] !=0) 
+   return tablero[6];
+// vertical lines
+if(tablero[0] == tablero[3] && tablero[3] == tablero[6] && tablero[0] !=0) 
+   return tablero[0];
+if(tablero[1] == tablero[4] && tablero[4] == tablero[7] && tablero[1] !=0) 
+   return tablero[1];
+if(tablero[2] == tablero[5] && tablero[5] == tablero[8] && tablero[2] !=0) 
+   return tablero[2];
+// diagonals
+if(tablero[0] == tablero[4] && tablero[4] == tablero[8] && tablero[0] !=0) 
+   return tablero[0];
+if(tablero[2] == tablero[4] && tablero[4] == tablero[6] && tablero[2] !=0) 
+   return tablero[2];
 
 if (numEspacios > 0){
 return 0;
