@@ -9,9 +9,9 @@ audio.play();
 */
 
 document.getElementById("onePlayer").onclick = function () {
-        location.href = "file:///Users/victorgarcia/Desktop/IH/Game/oneplayer.html";
+        location.href = "oneplayer.html";
 }
 document.getElementById("twoPlayer").onclick = function () {
-    location.href = "file:///Users/victorgarcia/Desktop/IH/Game/twoplayer.html";
+    location.href = "twoplayer.html";
 }
 
