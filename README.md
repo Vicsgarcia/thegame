@@ -1,4 +1,4 @@
-My Game
+El juego de Vic
 ==========
 
 El juego consta de tres pantallas
