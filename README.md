@@ -13,6 +13,7 @@ Comentarios
 --------------------
 1. Parte de código orgulloso:
 * Me siento orgulloso de, en One Player, como se mueven los bichitos, que lo he hecho con un loop y el nombre de las imagenes. Me llevo bastante tiempo.
+![alt text](images/loop.png)
 
 
 2. Parte que más te ha costado y porqué:
