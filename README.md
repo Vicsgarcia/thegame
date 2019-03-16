@@ -15,6 +15,10 @@ Comentarios
 * Me siento orgulloso de, en One Player, como se mueven los bichitos, que lo he hecho con un loop y el nombre de las imagenes. Me llevo bastante tiempo.
 ![alt text](images/loop.png)
 
+* ✅Me he pasado la serie Sillicon Valley
+* ✅He pedido bastante comida china y pizza a domicilio
+![alt text](images/pizza.jpg)
+
 
 2. Parte que más te ha costado y porqué:
 * Pensar que iba a hacer

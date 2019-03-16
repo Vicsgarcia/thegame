@@ -356,13 +356,13 @@ var game = (function () {
             evil = new FinalBoss();
         }
     }
-
+//evils and player hit
     function isEvilHittingPlayer() {
         return ( ( (evil.posY + evil.image.height) > player.posY && (player.posY + player.height) >= evil.posY ) &&
             ((player.posX >= evil.posX && player.posX <= (evil.posX + evil.image.width)) ||
                 (player.posX + player.width >= evil.posX && (player.posX + player.width) <= (evil.posX + evil.image.width))));
     }
-
+//evil shots and player is hitten
     function checkCollisions(shot) {
         if (shot.isHittingEvil()) {
             if (evil.life > 1) {
