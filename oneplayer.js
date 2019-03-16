@@ -30,7 +30,7 @@ var game = (function () {
         bgBoss,
         //Here you can modify the difficulty of the game
         evilSpeed = 0.5,
-        totalEvils = 7,
+        totalEvils = 3,
         playerLife = 10,
         shotSpeed = 5,
         playerSpeed = 5,
