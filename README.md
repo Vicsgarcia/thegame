@@ -16,6 +16,7 @@ Comentarios
 ![alt text](images/loop.png)
 
 * ✅Me he pasado la serie Sillicon Valley
+![alt text](images/erlich.jpg)
 * ✅He pedido bastante comida china y pizza a domicilio
 ![alt text](images/pizza.jpg)
 
