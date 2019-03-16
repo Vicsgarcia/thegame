@@ -11,18 +11,18 @@ Pantallas:
 
 Comentarios
 --------------------
-+ Parte de código orgulloso:
-Me siento orgulloso de, en One Player, como se mueven los bichitos, que lo he hecho con un loop y el nombre de las imagenes. Me llevo bastante tiempo.
+1. Parte de código orgulloso:
+* Me siento orgulloso de, en One Player, como se mueven los bichitos, que lo he hecho con un loop y el nombre de las imagenes. Me llevo bastante tiempo.
 
 
-+ Parte que más te ha costado y porqué:
-Pensar que iba a hacer
-Conseguir que el one player funcionara todo
+2. Parte que más te ha costado y porqué:
+* Pensar que iba a hacer
+* Conseguir que el one player funcionara todo
 
-+ Si volvieses a realizar el proyecto que cambiarias:
-Mejoraría los marcianitos para que se pudieran jugar en dos jugadores, siendo uno el bueno y otro el malo.
+3. Si volvieses a realizar el proyecto que cambiarias:
+* Mejoraría los marcianitos para que se pudieran jugar en dos jugadores, siendo uno el bueno y otro el malo.
 
-+ Mejoras con más tiempo:
-El modo dos jugadores
-La dificultad variable de los modos.
-Mejorar la estructura del código
+4. Mejoras con más tiempo:
+* El modo dos jugadores
+* La dificultad variable de los modos.
+* Mejorar la estructura del código
