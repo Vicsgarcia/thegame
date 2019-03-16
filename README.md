@@ -25,3 +25,4 @@ Mejoraría los marcianitos para que se pudieran jugar en dos jugadores, siendo u
 + Mejoras con más tiempo:
 El modo dos jugadores
 La dificultad variable de los modos.
+Mejorar la estructura del código
