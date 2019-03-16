@@ -15,10 +15,9 @@ Comentarios
 * Me siento orgulloso de, en One Player, como se mueven los bichitos, que lo he hecho con un loop y el nombre de las imagenes. Me llevo bastante tiempo.
 ![alt text](images/loop.png)
 
-* ✅Me he pasado la serie Sillicon Valley
-![alt text](images/erlich.jpg)
-* ✅He pedido bastante comida china y pizza a domicilio
-![alt text](images/pizza.jpg)
+* ✅Me he pasado la serie Sillicon Valley, que me ha servido de inspiración
+![alt text](images/erlich.gif)
+
 
 
 2. Parte que más te ha costado y porqué:
